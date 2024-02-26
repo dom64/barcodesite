@@ -1,10 +1,12 @@
 from io import BytesIO
 from barcode import Code128
 from barcode.writer import SVGWriter
+import re
 
 
 def barcodeGen(UPC):
     barcodeMem = BytesIO()
+    UPC = str(re.sub("[^0-9]", "", UPC))
     options = {
         'module_width': 0.7,
         'module_height': 25.0,
