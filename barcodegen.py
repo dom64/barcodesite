@@ -5,8 +5,11 @@ import re
 
 
 def barcodeGen(UPC):
-    barcodeMem = BytesIO()
     UPC = str(re.sub("[^0-9]", "", UPC))
+    if UPC == "":
+        real = "Error"
+        return real
+    barcodeMem = BytesIO()
     options = {
         'module_width': 0.7,
         'module_height': 25.0,
