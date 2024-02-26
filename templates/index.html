@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcode Gen</title>
+    <style>
+        html, body {
+        height: 100%;
+    }
+
+    html {
+        display: table;
+        margin: auto;
+    }
+
+    body {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    </style>
+</head>
+<body>
+    {{ barcode | safe}}
+    <form action="/" method="post">
+        <label for="UPC">UPC:</label>
+        <input type="text" id="UPC" name="UPC" inputmode="numeric" required>
+        <button type="submit" id="submit-button">Submit</button>
+    </form>
+</body>
+</html>
