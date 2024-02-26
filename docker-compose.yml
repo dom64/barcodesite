@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  barcode:
+    image: barcode
+    container_name: barcode
+    restart: unless-stopped
+    ports:
+      - "5050:5000"
+    environment:
+      - PUID=1000
+      - PGID=1000
+    build:
+      context: .
+      dockerfile: ./Dockerfile
