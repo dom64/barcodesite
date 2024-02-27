@@ -9,6 +9,8 @@ def barcodeGen(UPC):
     if UPC == "":
         real = "Error"
         return real
+    if len(UPC) == 14 and UPC[:2] == "00":
+        UPC = UPC[:-1] # This whole check is to lazily fix the UPC from the site automatically
     barcodeMem = BytesIO()
     options = {
         'module_width': 0.7,
